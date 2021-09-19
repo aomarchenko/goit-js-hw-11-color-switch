@@ -9,10 +9,12 @@ let timerId = null;
 const body = document.querySelector('body');
 
 const buttonStart = document.querySelector('.js-start');
+
 const buttonStop = document.querySelector('.js-stop');
 
 buttonStart.addEventListener('click', () => {
   timerId = setInterval(() => {
+    buttonStart.disabled = 'true';
     let colorsIndex = randomIntegerFromInterval(0, colors.length);
 
     document.body.style.backgroundColor = colors[colorsIndex];
@@ -20,5 +22,6 @@ buttonStart.addEventListener('click', () => {
 });
 
 buttonStop.addEventListener('click', () => {
+  buttonStart.removeAttribute('disabled');
   clearInterval(timerId);
 });
