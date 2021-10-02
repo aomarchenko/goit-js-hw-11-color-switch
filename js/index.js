@@ -13,8 +13,8 @@ const buttonStart = document.querySelector('.js-start');
 const buttonStop = document.querySelector('.js-stop');
 
 buttonStart.addEventListener('click', () => {
+  buttonStart.disabled = 'true';
   timerId = setInterval(() => {
-    buttonStart.disabled = 'true';
     let colorsIndex = randomIntegerFromInterval(0, colors.length);
 
     document.body.style.backgroundColor = colors[colorsIndex];
